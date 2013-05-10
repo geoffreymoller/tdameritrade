@@ -3,7 +3,7 @@ class CreateTrades < ActiveRecord::Migration
     create_table :trades do |t| 
       t.datetime :order_date_time
       t.datetime :executed_date
-      t.string :type
+      t.string :trade_type
       t.string :sub_type
       t.string :buy_sell_code
       t.string :asset_type
@@ -12,7 +12,7 @@ class CreateTrades < ActiveRecord::Migration
       t.integer :cusip
       t.decimal :price
       t.integer :quantity
-      t.integer :transaction_id
+      t.string :transaction_id
       t.decimal :value
       t.decimal :commission
       t.string :order_number
