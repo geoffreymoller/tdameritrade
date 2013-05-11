@@ -1,25 +1,77 @@
-<h1>Listing trades</h1>
+<% title "Trades" %>
 
 <table>
   <tr>
+    <th>Order Date Time</th>
+    <th>Executed Date</th>
+    <th>Trade Type</th>
+    <th>Sub Type</th>
+    <th>Buy Sell Code</th>
+    <th>Asset Type</th>
     <th>Symbol</th>
     <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Cusip</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Transaction</th>
+    <th>Value</th>
+    <th>Commission</th>
+    <th>Order Number</th>
+    <th>Fees</th>
+    <th>Additional Fees</th>
+    <th>Cash Balance Effect</th>
+    <th>Open Close</th>
+    <th>Option Expire Date</th>
+    <th>Option Underlying Symbol</th>
+    <th>Option Type</th>
+    <th>Option Strike</th>
+    <th>Accrued Interest</th>
+    <th>Shares Before</th>
+    <th>Shares After</th>
+    <th>Other Charges</th>
+    <th>Redemption Fee</th>
+    <th>Cdsc Fee</th>
+    <th>Bond Interest Rate</th>
+    <th>Account Type</th>
   </tr>
-
-<% @trades.each do |trade| %>
-  <tr>
-    <td><%= trade.symbol %></td>
-    <td><%= trade.description %></td>
-    <td><%= link_to 'Show', trade %></td>
-    <td><%= link_to 'Edit', edit_trade_path(trade) %></td>
-    <td><%= link_to 'Destroy', trade, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% for trade in @trades %>
+    <tr>
+      <td><%= trade.order_date_time %></td>
+      <td><%= trade.executed_date %></td>
+      <td><%= trade.trade_type %></td>
+      <td><%= trade.sub_type %></td>
+      <td><%= trade.buy_sell_code %></td>
+      <td><%= trade.asset_type %></td>
+      <td><%= trade.symbol %></td>
+      <td><%= trade.description %></td>
+      <td><%= trade.cusip %></td>
+      <td><%= trade.price %></td>
+      <td><%= trade.quantity %></td>
+      <td><%= trade.transaction_id %></td>
+      <td><%= trade.value %></td>
+      <td><%= trade.commission %></td>
+      <td><%= trade.order_number %></td>
+      <td><%= trade.fees %></td>
+      <td><%= trade.additional_fees %></td>
+      <td><%= trade.cash_balance_effect %></td>
+      <td><%= trade.open_close %></td>
+      <td><%= trade.option_expire_date %></td>
+      <td><%= trade.option_underlying_symbol %></td>
+      <td><%= trade.option_type %></td>
+      <td><%= trade.option_strike %></td>
+      <td><%= trade.accrued_interest %></td>
+      <td><%= trade.shares_before %></td>
+      <td><%= trade.shares_after %></td>
+      <td><%= trade.other_charges %></td>
+      <td><%= trade.redemption_fee %></td>
+      <td><%= trade.cdsc_fee %></td>
+      <td><%= trade.bond_interest_rate %></td>
+      <td><%= trade.account_type %></td>
+      <td><%= link_to "Show", trade %></td>
+      <td><%= link_to "Edit", edit_trade_path(trade) %></td>
+      <td><%= link_to "Destroy", trade, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Trade', new_trade_path %>
+<p><%= link_to "New Trade", new_trade_path %></p>

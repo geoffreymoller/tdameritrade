@@ -1,25 +1,128 @@
-<%= form_for(@trade) do |f| %>
-  <% if @trade.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@trade.errors.count, "error") %> prohibited this trade from being saved:</h2>
-
-      <ul>
-      <% @trade.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
+<%= form_for @trade do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :order_date_time %><br />
+    <%= f.datetime_select :order_date_time %>
+  </p>
+  <p>
+    <%= f.label :executed_date %><br />
+    <%= f.datetime_select :executed_date %>
+  </p>
+  <p>
+    <%= f.label :trade_type %><br />
+    <%= f.text_field :trade_type %>
+  </p>
+  <p>
+    <%= f.label :sub_type %><br />
+    <%= f.text_field :sub_type %>
+  </p>
+  <p>
+    <%= f.label :buy_sell_code %><br />
+    <%= f.text_field :buy_sell_code %>
+  </p>
+  <p>
+    <%= f.label :asset_type %><br />
+    <%= f.text_field :asset_type %>
+  </p>
+  <p>
     <%= f.label :symbol %><br />
     <%= f.text_field :symbol %>
-  </div>
-  <div class="field">
+  </p>
+  <p>
     <%= f.label :description %><br />
     <%= f.text_field :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </p>
+  <p>
+    <%= f.label :cusip %><br />
+    <%= f.number_field :cusip %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :quantity %><br />
+    <%= f.number_field :quantity %>
+  </p>
+  <p>
+    <%= f.label :transaction_id %><br />
+    <%= f.text_field :transaction_id %>
+  </p>
+  <p>
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </p>
+  <p>
+    <%= f.label :commission %><br />
+    <%= f.text_field :commission %>
+  </p>
+  <p>
+    <%= f.label :order_number %><br />
+    <%= f.text_field :order_number %>
+  </p>
+  <p>
+    <%= f.label :fees %><br />
+    <%= f.text_field :fees %>
+  </p>
+  <p>
+    <%= f.label :additional_fees %><br />
+    <%= f.text_field :additional_fees %>
+  </p>
+  <p>
+    <%= f.label :cash_balance_effect %><br />
+    <%= f.check_box :cash_balance_effect %>
+  </p>
+  <p>
+    <%= f.label :open_close %><br />
+    <%= f.text_field :open_close %>
+  </p>
+  <p>
+    <%= f.label :option_expire_date %><br />
+    <%= f.datetime_select :option_expire_date %>
+  </p>
+  <p>
+    <%= f.label :option_underlying_symbol %><br />
+    <%= f.text_field :option_underlying_symbol %>
+  </p>
+  <p>
+    <%= f.label :option_type %><br />
+    <%= f.text_field :option_type %>
+  </p>
+  <p>
+    <%= f.label :option_strike %><br />
+    <%= f.text_field :option_strike %>
+  </p>
+  <p>
+    <%= f.label :accrued_interest %><br />
+    <%= f.text_field :accrued_interest %>
+  </p>
+  <p>
+    <%= f.label :shares_before %><br />
+    <%= f.number_field :shares_before %>
+  </p>
+  <p>
+    <%= f.label :shares_after %><br />
+    <%= f.number_field :shares_after %>
+  </p>
+  <p>
+    <%= f.label :other_charges %><br />
+    <%= f.text_field :other_charges %>
+  </p>
+  <p>
+    <%= f.label :redemption_fee %><br />
+    <%= f.text_field :redemption_fee %>
+  </p>
+  <p>
+    <%= f.label :cdsc_fee %><br />
+    <%= f.text_field :cdsc_fee %>
+  </p>
+  <p>
+    <%= f.label :bond_interest_rate %><br />
+    <%= f.text_field :bond_interest_rate %>
+  </p>
+  <p>
+    <%= f.label :account_type %><br />
+    <%= f.number_field :account_type %>
+  </p>
+  <p><%= f.submit %></p>
 <% end %>

@@ -1,15 +1,132 @@
-<p id="notice"><%= notice %></p>
+<% title "Trade" %>
 
 <p>
-  <b>Symbol:</b>
+  <strong>Order Date Time:</strong>
+  <%= @trade.order_date_time %>
+</p>
+<p>
+  <strong>Executed Date:</strong>
+  <%= @trade.executed_date %>
+</p>
+<p>
+  <strong>Trade Type:</strong>
+  <%= @trade.trade_type %>
+</p>
+<p>
+  <strong>Sub Type:</strong>
+  <%= @trade.sub_type %>
+</p>
+<p>
+  <strong>Buy Sell Code:</strong>
+  <%= @trade.buy_sell_code %>
+</p>
+<p>
+  <strong>Asset Type:</strong>
+  <%= @trade.asset_type %>
+</p>
+<p>
+  <strong>Symbol:</strong>
   <%= @trade.symbol %>
 </p>
-
 <p>
-  <b>Description:</b>
+  <strong>Description:</strong>
   <%= @trade.description %>
 </p>
+<p>
+  <strong>Cusip:</strong>
+  <%= @trade.cusip %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @trade.price %>
+</p>
+<p>
+  <strong>Quantity:</strong>
+  <%= @trade.quantity %>
+</p>
+<p>
+  <strong>Transaction:</strong>
+  <%= @trade.transaction_id %>
+</p>
+<p>
+  <strong>Value:</strong>
+  <%= @trade.value %>
+</p>
+<p>
+  <strong>Commission:</strong>
+  <%= @trade.commission %>
+</p>
+<p>
+  <strong>Order Number:</strong>
+  <%= @trade.order_number %>
+</p>
+<p>
+  <strong>Fees:</strong>
+  <%= @trade.fees %>
+</p>
+<p>
+  <strong>Additional Fees:</strong>
+  <%= @trade.additional_fees %>
+</p>
+<p>
+  <strong>Cash Balance Effect:</strong>
+  <%= @trade.cash_balance_effect %>
+</p>
+<p>
+  <strong>Open Close:</strong>
+  <%= @trade.open_close %>
+</p>
+<p>
+  <strong>Option Expire Date:</strong>
+  <%= @trade.option_expire_date %>
+</p>
+<p>
+  <strong>Option Underlying Symbol:</strong>
+  <%= @trade.option_underlying_symbol %>
+</p>
+<p>
+  <strong>Option Type:</strong>
+  <%= @trade.option_type %>
+</p>
+<p>
+  <strong>Option Strike:</strong>
+  <%= @trade.option_strike %>
+</p>
+<p>
+  <strong>Accrued Interest:</strong>
+  <%= @trade.accrued_interest %>
+</p>
+<p>
+  <strong>Shares Before:</strong>
+  <%= @trade.shares_before %>
+</p>
+<p>
+  <strong>Shares After:</strong>
+  <%= @trade.shares_after %>
+</p>
+<p>
+  <strong>Other Charges:</strong>
+  <%= @trade.other_charges %>
+</p>
+<p>
+  <strong>Redemption Fee:</strong>
+  <%= @trade.redemption_fee %>
+</p>
+<p>
+  <strong>Cdsc Fee:</strong>
+  <%= @trade.cdsc_fee %>
+</p>
+<p>
+  <strong>Bond Interest Rate:</strong>
+  <%= @trade.bond_interest_rate %>
+</p>
+<p>
+  <strong>Account Type:</strong>
+  <%= @trade.account_type %>
+</p>
 
-
-<%= link_to 'Edit', edit_trade_path(@trade) %> |
-<%= link_to 'Back', trades_path %>
+<p>
+  <%= link_to "Edit", edit_trade_path(@trade) %> |
+  <%= link_to "Destroy", @trade, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", trades_path %>
+</p>
